@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="signInViewModel"
+            type="com.ecoplay.android.viewmodels.SignInViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ui.SignInActivity">
+
+        <TextView
+            android:id="@+id/tv_sign_in_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginRight="32dp"
+            android:text="Ecocast 회원가입"
+            android:textSize="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_sign_in_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginRight="32dp"
+            android:ems="10"
+            android:hint="E-Mail Address"
+            android:inputType="textEmailAddress"
+            android:text="@={signInViewModel.email}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_sign_in_text" />
+
+        <EditText
+            android:id="@+id/et_sign_in_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:text="@={signInViewModel.password}"
+            app:layout_constraintLeft_toLeftOf="@id/et_sign_in_email"
+            app:layout_constraintRight_toRightOf="@id/et_sign_in_email"
+            app:layout_constraintTop_toBottomOf="@id/et_sign_in_email" />
+
+        <EditText
+            android:id="@+id/et_sign_in_password_check"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Password (Check)"
+            android:inputType="textPassword"
+            android:text="@={signInViewModel.passwordCheck}"
+            app:layout_constraintLeft_toLeftOf="@id/et_sign_in_password"
+            app:layout_constraintRight_toRightOf="@id/et_sign_in_password"
+            app:layout_constraintTop_toBottomOf="@id/et_sign_in_password" />
+
+        <EditText
+            android:id="@+id/et_sign_in_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="text"
+            android:text="@={signInViewModel.name}"
+            app:layout_constraintLeft_toLeftOf="@id/et_sign_in_password_check"
+            app:layout_constraintRight_toRightOf="@id/et_sign_in_password_check"
+            app:layout_constraintTop_toBottomOf="@id/et_sign_in_password_check" />
+
+        <Button
+            android:id="@+id/btn_sign_in"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClickListener="@{signInViewModel.onClick}"
+            android:text="Sign In"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/et_sign_in_name"
+            app:layout_constraintRight_toRightOf="@id/et_sign_in_name"
+            app:layout_constraintTop_toBottomOf="@id/et_sign_in_name" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClickListener="@{signInViewModel.onClick}"
+            android:text="Back"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/btn_sign_in"
+            app:layout_constraintRight_toRightOf="@id/btn_sign_in"
+            app:layout_constraintTop_toBottomOf="@id/btn_sign_in" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

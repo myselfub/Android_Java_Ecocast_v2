@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="com.ecoplay.android.viewmodels.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ui.LoginActivity">
+
+        <EditText
+            android:id="@+id/et_login_email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="128dp"
+            android:layout_marginRight="32dp"
+            android:ems="10"
+            android:hint="E-Mail Address"
+            android:inputType="textEmailAddress"
+            android:text="@={loginViewModel.email}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/et_login_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:ems="10"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:text="@={loginViewModel.password}"
+            app:layout_constraintLeft_toLeftOf="@id/et_login_email"
+            app:layout_constraintRight_toRightOf="@id/et_login_email"
+            app:layout_constraintTop_toBottomOf="@id/et_login_email" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:onClick="@{(v) -> loginViewModel.onClick(v)}"
+            android:text="Click to Login"
+            android:textSize="18dp"
+            app:layout_constraintLeft_toLeftOf="@id/et_login_password"
+            app:layout_constraintRight_toRightOf="@id/et_login_password"
+            app:layout_constraintTop_toBottomOf="@id/et_login_password" />
+
+        <TextView
+            android:id="@+id/tv_forget_pw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{(v) -> loginViewModel.onClick(v)}"
+            android:text="비밀번호를 잊으셨나요?"
+            android:textColor="#195F91"
+            android:textSize="18dp"
+            app:layout_constraintEnd_toEndOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+        <TextView
+            android:id="@+id/tv_sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:onClick="@{(v) -> loginViewModel.onClick(v)}"
+            android:text="회원이 아니세요?"
+            android:textColor="#195F91"
+            android:textSize="18dp"
+            app:layout_constraintStart_toStartOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_login" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/btn_google_login"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="42dp"
+            android:onClickListener="@{loginViewModel.onClick}"
+            app:layout_constraintLeft_toLeftOf="@id/btn_login"
+            app:layout_constraintRight_toRightOf="@id/btn_login"
+            app:layout_constraintTop_toBottomOf="@id/tv_sign_in" />
+
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/btn_facebook_login"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:onClick="@{(v) -> loginViewModel.onClick(v)}"
+            app:layout_constraintLeft_toLeftOf="@id/btn_google_login"
+            app:layout_constraintRight_toRightOf="@id/btn_google_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_google_login" />
+
+        <com.nhn.android.naverlogin.ui.view.OAuthLoginButton
+            android:id="@+id/btn_naver_login"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="32dp"
+            android:onClick="@{(v) -> loginViewModel.onClick(v)}"
+            app:layout_constraintLeft_toLeftOf="@id/btn_facebook_login"
+            app:layout_constraintRight_toRightOf="@id/btn_facebook_login"
+            app:layout_constraintTop_toBottomOf="@id/btn_facebook_login" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

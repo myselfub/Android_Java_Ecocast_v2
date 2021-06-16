@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Ecocast</string>
+    <string name="google_client_id">GOOGLE_CLIENT_ID</string>
+    <string name="facebook_app_id">FACEBOOK_APP_ID</string>
+    <string name="fb_login_protocol_scheme">FACEBOOK_LOGIN</string>
+    <string name="naver_oauth_client_id">NAVER_OAUTH_CLIENT_ID</string>
+    <string name="naver_oauth_client_secret">NAVER_OAUTH_CLIENT_SECRET</string>
+    <string name="naver_oauth_client_name">NAVER_OUATH_CLIENT_NAME</string>
+
+    <string name="noti_channel_id">ecocast_channel</string>
+    <string name="noti_channel_name">에코캐스트</string>
+    <string name="noti_channel_description">에코캐스트 알림</string>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".views.ui.MainActivity">
+
+        <TextView
+            android:id="@+id/tv_main_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:gravity="center"
+            android:onClick="clickTv2"
+            android:text="로그인 성공"
+            android:textSize="32dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_change_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:onClick="clickTv3"
+            android:text="비밀번호 변경"
+            android:textSize="32dp"
+            app:layout_constraintLeft_toLeftOf="@id/tv_main_text"
+            app:layout_constraintRight_toRightOf="@id/tv_main_text"
+            app:layout_constraintTop_toBottomOf="@id/tv_main_text" />
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:gravity="center"
+            android:onClick="clickTv4"
+            android:text="로그아웃"
+            android:textSize="32dp"
+            app:layout_constraintLeft_toLeftOf="@id/btn_change_password"
+            app:layout_constraintRight_toRightOf="@id/btn_change_password"
+            app:layout_constraintTop_toBottomOf="@id/btn_change_password" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:onClick="clickBtn1"
+            android:text="블루투스 연동"
+            android:textSize="24dp"
+            app:layout_constraintLeft_toLeftOf="@id/btn_logout"
+            app:layout_constraintRight_toRightOf="@id/btn_logout"
+            app:layout_constraintTop_toBottomOf="@id/btn_logout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
